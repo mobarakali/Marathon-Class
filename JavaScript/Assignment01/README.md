@@ -3,7 +3,6 @@
 ### October 25, 2023, at 8:00 PM
 
 ## Solve these questions. 
-<hr>
 
 // Problem 1: Write a function to calculate the area of a triangle.
 

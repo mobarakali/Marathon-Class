@@ -1,15 +1,103 @@
 /** Solve these questions. */
-
+/////////////////////////////////////////////////////////////////////
 // Problem 1: Write a function to calculate the area of a triangle.
+/////////////////////////////////////////////////////////////////////
+
+// The most common method is to use the formula for the area of a 
+// triangle, which is: Area = 0.5 * base * height
+
+function calculateAreaOfTriangle(base, height){
+    // Calculate the Area
+    let area = 0.5 * base * height;
+    return area;
+}
+
+console.log( calculateAreaOfTriangle(3.5, 4));
 
 
+
+//////////////////////////////////////////////////////////////////
 // Problem 2: Write a function to convert degrees to radians.
+//////////////////////////////////////////////////////////////////
 
-// Problem 3: Create a function calculateFactorial that takes a number and returns its factorial.
+// To convert degrees to radians programmatically, the following formula can be used:
+// Radians = Degrees * (π / 180)
 
-// Problem 4: Create a function isPrime that takes a number as a parameter and returns true if it's a prime number, and false otherwise.
+function degreesToRadians(degrees) {
+    // Convert degrees to radians
+    let radians = degrees * (Math.PI / 180);
+    return radians.toFixed(4); // 
+}
 
-// Problem 5: Create a function mergeArrays that takes two arrays as parameters and returns a new array that merges both arrays.
+console.log(degreesToRadians(90))
+
+//////////////////////////////////////////////////////////////////////////////////
+// Problem 3: Create a function calculateFactorial that takes a number and 
+// returns its factorial.
+/////////////////////////////////////////////////////////////////////////////////
+
+// calculate the Factorial of a give number using recursive function
+
+function calculateFactorial(n) {
+    if (n == 0) {
+        return 1;
+    } else {
+        return n * calculateFactorial(n - 1);
+    }
+}
+console.log(calculateFactorial(5));
+
+/////////////////////////////////////////////////////////////////////////////////
+// Problem 4: Create a function isPrime that takes a number as a parameter and 
+// returns true if it's a prime number, and false otherwise.
+/////////////////////////////////////////////////////////////////////////////////
+
+// Check if the given number Prime or not using the recursive function
+
+function isPrime(number, divisor = 2) {
+    // 2 is the smallest prime so I took the default value of 'divisor = 2'
+    
+    if (number <= 1) {
+        return false;
+    }
+
+    if (divisor >= number) {
+        return true;
+    }
+
+    if (number % divisor === 0) {
+        return false; // Number is divisible by divisor, so it's not prime
+    }
+
+    // recursive function to increase divisor value 
+    // and check if it is Prime Number
+    return isPrime(number, divisor + 1);
+}
+
+let num = 11
+
+if (isPrime(num)) {
+    console.log(num + " is a prime number.");
+} else {
+    console.log(num + " is not a prime number.");
+}
+
+/////////////////////////////////////////////////////////////////////////////////
+// Problem 5: Create a function mergeArrays that takes two arrays as parameters
+// and returns a new array that merges both arrays.
+/////////////////////////////////////////////////////////////////////////////////
+
+// '.concat()' can help us to Marge 2 arrays 
+function mergeArrays(arr1, arr2) {
+    return arr1.concat(arr2);
+}
+
+console.log( mergeArrays([1, 2, 3], [3, 2, 1]));
+
+/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+
+
 
 // Problem 6: Create a function isLeapYear that takes a year as a parameter and returns "This is a leap year" if it's a leap year, and "Not Leap year" otherwise.
 
